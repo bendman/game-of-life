@@ -1,0 +1,28 @@
+{
+  "name": "game-of-life",
+  "version": "0.0.1",
+  "main": "index.html",
+  "files": [
+    "dist",
+    "main.css",
+    "index.html"
+  ],
+  "scripts": {
+    "build": "wp --mode=production",
+    "dev": "wp --mode=development --watch",
+    "prepare": "npm run build"
+  },
+  "author": "Ben Duncan <ben@cascadiaconcepts.com> (http://benduncan.me)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bendman/game-of-life.git"
+  },
+  "dependencies": {
+    "webpack": "4.17.1",
+    "webpack-command": "0.4.1"
+  },
+  "devDependencies": {
+    "webpack-serve": "2.0.2"
+  }
+}
