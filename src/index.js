@@ -1,4 +1,17 @@
-let dimensions = {
+/**
+ * Modal Setup
+ */
+window.addEventListener('click', (event) => {
+  const closeEl = event.target.closest('.modal-close');
+  if (closeEl) {
+    closeEl.closest('.modal').classList.add('-closed');
+  }
+});
+
+/**
+ * Simulation Setup
+ */
+const dimensions = {
   height: window.innerHeight - 1, // leave 1 extra for border
   width: window.innerWidth - 1,
 };

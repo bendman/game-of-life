@@ -21,6 +21,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+button {
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 p {
   margin: 1.4em 0;
 }
@@ -38,7 +43,7 @@ a:hover {
 }
 
 /*
-  Model Styles
+  Simulation Styles
 */
 html {
   height: 100%;
@@ -54,4 +59,60 @@ body {
 
 canvas {
   display: block;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 40em;
+  max-height: 80%;
+  overflow: auto;
+  background: white;
+  box-shadow: 0 5px 400px rgba(0, 0, 0, 1);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.modal.-closed {
+  display: none;
+}
+
+.modal * > :first-child {
+  margin-top: 0;
+}
+
+.modal * > :last-child {
+  margin-bottom: 0;
+}
+
+.modal__content {
+  padding: 2rem;
+  overflow: auto;
+  flex: 1;
+}
+
+.modal header {
+  text-align: center;
+}
+
+.modal-button {
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3em;
+  font-size: 1rem;
+  border: none;
+  background: forestgreen;
+  color: white;
+}
+
+.modal-button:hover {
+  background: darkgreen;
 }
