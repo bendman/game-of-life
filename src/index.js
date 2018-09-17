@@ -1,3 +1,7 @@
+let dimensions = {
+  height: window.innerHeight - 1, // leave 1 extra for border
+  width: window.innerWidth - 1,
+};
 let worldSize;
 let cellSize;
 let worldBuffer;
@@ -53,12 +57,19 @@ const updateWorlds = () => {
 };
 
 window.setup = () => {
-  frameRate(2);
-  colorMode(RGB, 1);
-  createCanvas(400, 400);
-  stroke(0.5);
-  worldSize = [15, 15]
   cellSize = 15;
+  worldSize = [
+    Math.floor(dimensions.height / cellSize),
+    Math.floor(dimensions.width / cellSize),
+  ];
+
+  frameRate(5);
+  colorMode(RGB, 1);
+  createCanvas(
+    worldSize[1] * cellSize + 1, // 1 extra for border
+    worldSize[0] * cellSize + 1,
+  );
+  stroke(0.5);
 
   const startWorld = randomWorld(...worldSize);
   worldBuffer = [startWorld, randomWorld(...worldSize)];
